@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: wahoreport
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgres://huangcy.top:5432/waho
-    username: waho
-    password: waho1234
