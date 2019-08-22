@@ -1,4 +1,4 @@
-package com.aloha.flink.executor.mq.controller;
+package com.aloha.flink.executor.web.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.aloha.flink.common.protocol.Tbl;

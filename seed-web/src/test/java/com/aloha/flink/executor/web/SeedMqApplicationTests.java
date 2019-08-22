@@ -1,4 +1,4 @@
-package com.aloha.flink.executor.mq;
+package com.aloha.flink.executor.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

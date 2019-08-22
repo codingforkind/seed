@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aloha.flink</groupId>
-	<artifactId>seed-mq</artifactId>
+	<artifactId>seed-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>seed-mq</name>
 	<description>Demo project for Spring Boot</description>
