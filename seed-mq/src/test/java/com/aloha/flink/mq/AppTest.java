@@ -1,4 +1,4 @@
-package seed;
+package com.aloha.flink.mq;
 
 import static org.junit.Assert.assertTrue;
 

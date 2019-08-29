@@ -65,6 +65,12 @@
 			<version>${flink.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-json</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+
 		<!-- seed -->
 		<dependency>
 			<groupId>com.aloha.flink</groupId>
