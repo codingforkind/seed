@@ -7,9 +7,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 @Data
 public class Session {
     private String token;
-    private String topic;
-
-    private StreamExecutionEnvironment sEnv;
+    private String tblSrcTopic;
+    private String exeSqlTopic;
 
     private ExecutionContext exeCtx;
 }

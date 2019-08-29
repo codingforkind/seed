@@ -9,6 +9,6 @@ import java.util.Map;
 @Data
 public class ExecutionContext {
 
-    private Map<String, Kafka011TableSource> sourceList = new HashedMap();
+    private Map<String, Kafka011TableSource> sourceMap = new HashedMap();
 
 }

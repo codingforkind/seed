@@ -1,19 +1,19 @@
 package com.aloha.flink.executor;
 
-import com.aloha.flink.executor.exec.TableRegister;
+import com.aloha.flink.executor.exec.Executor;
 import com.aloha.flink.executor.context.session.Session;
 import org.junit.Test;
 
-public class TableRegisterTests {
+public class ExecutorTests {
 
 
     @Test
     public void tableRegister() throws Exception {
-        TableRegister tableRegister = new TableRegister();
+        Executor executor = new Executor();
         Session session = new Session();
         session.setToken("this-is-a-test-token");
-        session.setTopic("test-topic");
-        tableRegister.register(session);
+        session.setTblSrcTopic("test-tblSrcTopic");
+        executor.register(session);
     }
 
 }

@@ -24,7 +24,7 @@ public class TableController {
 
         log.info("got a tbl init msg.....");
 
-        kafkaTemplate.send("test-topic", JSON.toJSONString(initTbl(tbl)));
+        kafkaTemplate.send("test-tblSrcTopic", JSON.toJSONString(initTbl(tbl)));
 
     }
 
