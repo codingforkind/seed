@@ -8,9 +8,11 @@
 	<artifactId>seed</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
+
 	<modules>
 		<module>seed-common</module>
 		<module>seed-executor</module>
+		<module>seed-mq</module>
 	</modules>
 
 	<properties>

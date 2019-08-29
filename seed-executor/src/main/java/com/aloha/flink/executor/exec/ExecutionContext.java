@@ -1,6 +1,6 @@
 package com.aloha.flink.executor.exec;
 
-import com.aloha.flink.executor.session.Session;
+import com.aloha.flink.executor.context.session.Session;
 import org.apache.flink.streaming.api.datastream.DataStream;
 
 import java.util.HashMap;

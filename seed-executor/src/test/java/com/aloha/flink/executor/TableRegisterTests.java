@@ -1,7 +1,7 @@
 package com.aloha.flink.executor;
 
 import com.aloha.flink.executor.exec.TableRegister;
-import com.aloha.flink.executor.session.Session;
+import com.aloha.flink.executor.context.session.Session;
 import org.junit.Test;
 
 public class TableRegisterTests {
