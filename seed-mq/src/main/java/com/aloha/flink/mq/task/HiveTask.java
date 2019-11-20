@@ -9,6 +9,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,7 +58,6 @@ public class HiveTask {
 
 
     public static void main(String[] args) throws Exception {
-        // TODO 设置log4j日志输出
         Configuration conf = new Configuration();
 
 //        String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
@@ -74,7 +74,9 @@ public class HiveTask {
         job.setOutputValueClass(IntWritable.class);
 
         String in = "hdfs://master:9000/study/word_count";
-        FileInputFormat.addInputPath(job, new Path(in));
+//        FileInputFormat.addInputPath(job, new Path(in));
+        TextInputFormat.addInputPath(job, new Path(in));
+
 
         String out = "hdfs://master:9000/study/result/char_rst";
         Path path = new Path(out);
