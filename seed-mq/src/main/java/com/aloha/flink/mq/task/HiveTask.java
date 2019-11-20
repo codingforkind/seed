@@ -1,6 +1,7 @@
 package com.aloha.flink.mq.task;
 
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -16,10 +17,11 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class HiveTask {
+    private static final Logger LOG = LoggerFactory.getLogger(HiveTask.class);
+
 
     public static class HiveMapper extends Mapper<Object, Text, Text, IntWritable> {
         //<KEYIN, VALUEIN, KEYOUT, VALUEOUT>
-        private static final Logger LOG = LoggerFactory.getLogger(HiveMapper.class);
 
         private final IntWritable one = new IntWritable(1);
         private Text word = new Text();
@@ -57,6 +59,7 @@ public class HiveTask {
     public static void main(String[] args) throws Exception {
         // TODO 设置log4j日志输出
         Configuration conf = new Configuration();
+
 //        String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
 //        if (otherArgs.length < 2) {
 //            System.err.println("Usage: wordcount <in> [<in>...] <out>");
@@ -71,11 +74,12 @@ public class HiveTask {
         job.setOutputValueClass(IntWritable.class);
 
         String in = "hdfs://master:9000/study/word_count";
-        String out = "hdfs://master:9000/study/result/char_rst";
         FileInputFormat.addInputPath(job, new Path(in));
+
+        String out = "hdfs://master:9000/study/result/char_rst";
         Path path = new Path(out);
-
-
+        FileSystem fileSystem = path.getFileSystem(conf);
+        boolean delete = fileSystem.delete(path, true); // 文件夹不存在也可以删除，只不过返回值是false
         FileOutputFormat.setOutputPath(job, path);
 
         System.exit(job.waitForCompletion(true) ? 0 : 1);
